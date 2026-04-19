@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { createClient } from '@/lib/supabase/client';
 import { useAppStore } from '@/store/useAppStore';
 import LanguageSwitcher from '@/components/layout/LanguageSwitcher';
+import { Rocket, Sun, Moon, AlertTriangle } from 'lucide-react';
 
 export default function RegisterPage() {
   const { t, toggleTheme, theme } = useAppStore();
@@ -58,13 +59,15 @@ export default function RegisterPage() {
       <div className="fixed top-4 right-4 flex items-center gap-2">
         <LanguageSwitcher />
         <button onClick={toggleTheme} className="p-2 rounded-lg hover:bg-tertiary transition-colors text-sm">
-          {theme === 'dark' ? '☀️' : '🌙'}
+          {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
         </button>
       </div>
 
       <div className="glass rounded-3xl p-8 w-full max-w-md animate-scaleIn" style={{ animationFillMode: 'both' }}>
         <div className="text-center mb-8">
-          <div className="text-5xl mb-3">🚀</div>
+          <div className="flex justify-center mb-3">
+            <Rocket className="w-12 h-12 text-purple-500" />
+          </div>
           <h1 className="text-2xl font-bold mb-1">{t('auth.registerTitle')}</h1>
           <p className="text-sm text-muted">{t('auth.registerSubtitle')}</p>
         </div>
@@ -97,7 +100,7 @@ export default function RegisterPage() {
 
           {error && (
             <div className="flex items-center gap-2 p-3 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-sm animate-fadeIn">
-              <span>⚠️</span>
+              <AlertTriangle className="w-4 h-4" />
               {error}
             </div>
           )}

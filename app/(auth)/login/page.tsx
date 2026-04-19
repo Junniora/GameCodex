@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { createClient } from '@/lib/supabase/client';
 import { useAppStore } from '@/store/useAppStore';
 import LanguageSwitcher from '@/components/layout/LanguageSwitcher';
+import { Gamepad2, Sun, Moon, AlertTriangle } from 'lucide-react';
 
 export default function LoginPage() {
   const { t, toggleTheme, theme } = useAppStore();
@@ -52,7 +53,7 @@ export default function LoginPage() {
           onClick={toggleTheme}
           className="p-2 rounded-lg hover:bg-tertiary transition-colors text-sm"
         >
-          {theme === 'dark' ? '☀️' : '🌙'}
+          {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
         </button>
       </div>
 
@@ -63,7 +64,9 @@ export default function LoginPage() {
       >
         {/* Logo */}
         <div className="text-center mb-8">
-          <div className="text-5xl mb-3">🎮</div>
+          <div className="flex justify-center mb-3">
+            <Gamepad2 className="w-12 h-12 text-blue-500" />
+          </div>
           <h1 className="text-2xl font-bold mb-1">{t('auth.loginTitle')}</h1>
           <p className="text-sm text-muted">{t('auth.loginSubtitle')}</p>
         </div>
@@ -110,7 +113,7 @@ export default function LoginPage() {
           {/* Error */}
           {error && (
             <div className="flex items-center gap-2 p-3 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-sm animate-fadeIn">
-              <span>⚠️</span>
+              <AlertTriangle className="w-4 h-4" />
               {error}
             </div>
           )}
