@@ -1,5 +1,6 @@
 'use client';
 // components/hub/FavoriteButton.tsx
+import { Star } from 'lucide-react';
 interface Props {
   isFavorite: boolean;
   onToggle: () => void;
@@ -19,7 +20,7 @@ export default function FavoriteButton({ isFavorite, onToggle }: Props) {
       `}
       title={isFavorite ? 'Remove from favorites' : 'Add to favorites'}
     >
-      <span className="text-sm">{isFavorite ? '⭐' : '☆'}</span>
+      <Star className={`w-4 h-4 ${isFavorite ? 'fill-current' : ''}`} />
     </button>
   );
 }

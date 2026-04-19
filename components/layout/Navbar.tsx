@@ -66,10 +66,12 @@ export default function Navbar() {
           {/* Theme toggle */}
           <button
             onClick={toggleTheme}
-            className="p-2 rounded-lg hover:bg-tertiary transition-colors"
+            className="group p-2 rounded-lg hover:bg-tertiary transition-colors"
             title={theme === 'dark' ? t('common.lightMode') : t('common.darkMode')}
           >
-            {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+            <div className="transition-transform duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:rotate-[360deg]">
+              {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+            </div>
           </button>
 
           {/* User menu */}

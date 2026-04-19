@@ -43,6 +43,8 @@ export default function LoginPage() {
         className="absolute inset-0 -z-10"
         style={{
           background: 'radial-gradient(ellipse at 50% 0%, rgba(0,122,255,0.15) 0%, transparent 70%), radial-gradient(ellipse at 80% 80%, rgba(191,90,242,0.1) 0%, transparent 50%)',
+          willChange: 'transform',
+          transform: 'translateZ(0)'
         }}
       />
 
@@ -51,9 +53,11 @@ export default function LoginPage() {
         <LanguageSwitcher />
         <button
           onClick={toggleTheme}
-          className="p-2 rounded-lg hover:bg-tertiary transition-colors text-sm"
+          className="group p-2 rounded-lg hover:bg-tertiary transition-colors text-sm"
         >
-          {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+          <div className="transition-transform duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:rotate-[360deg]">
+            {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+          </div>
         </button>
       </div>
 

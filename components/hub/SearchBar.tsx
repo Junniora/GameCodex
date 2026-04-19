@@ -1,5 +1,6 @@
 'use client';
 // components/hub/SearchBar.tsx
+import { Search } from 'lucide-react';
 interface Props {
   value: string;
   onChange: (v: string) => void;
@@ -9,7 +10,7 @@ interface Props {
 export default function SearchBar({ value, onChange, placeholder }: Props) {
   return (
     <div className="relative">
-      <span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted text-sm">🔍</span>
+      <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-muted w-4 h-4" />
       <input
         type="text"
         value={value}

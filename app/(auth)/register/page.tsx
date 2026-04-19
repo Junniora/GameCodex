@@ -42,7 +42,13 @@ export default function RegisterPage() {
       }
       setLoading(false);
     } else {
-      router.push('/hub');
+      const { data } = await supabase.auth.getSession();
+      if (!data.session) {
+        // Require email verification
+        router.push('/verify');
+      } else {
+        router.push('/hub');
+      }
       router.refresh();
     }
   };
@@ -53,13 +59,17 @@ export default function RegisterPage() {
         className="absolute inset-0 -z-10"
         style={{
           background: 'radial-gradient(ellipse at 30% 20%, rgba(191,90,242,0.12) 0%, transparent 60%), radial-gradient(ellipse at 70% 80%, rgba(0,122,255,0.1) 0%, transparent 50%)',
+          willChange: 'transform',
+          transform: 'translateZ(0)'
         }}
       />
 
       <div className="fixed top-4 right-4 flex items-center gap-2">
         <LanguageSwitcher />
-        <button onClick={toggleTheme} className="p-2 rounded-lg hover:bg-tertiary transition-colors text-sm">
-          {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+        <button onClick={toggleTheme} className="group p-2 rounded-lg hover:bg-tertiary transition-colors text-sm">
+          <div className="transition-transform duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:rotate-[360deg]">
+            {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+          </div>
         </button>
       </div>
 
