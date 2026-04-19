@@ -126,12 +126,12 @@ CREATE POLICY "Auth users update wiki" ON game_wiki
 -- SEED DATA — Categorías de ejemplo
 -- ─────────────────────────────────────────
 INSERT INTO categories (name, name_en, slug, icon, description, description_en, color) VALUES
-  ('Sandbox', 'Sandbox', 'sandbox', '🏗️', 'Mundos abiertos para construir y explorar', 'Open worlds to build and explore', '#f59e0b'),
-  ('FPS', 'FPS', 'fps', '🎯', 'Disparos en primera persona', 'First-person shooters', '#ef4444'),
-  ('RPG', 'RPG', 'rpg', '⚔️', 'Juegos de rol y aventura', 'Role-playing games and adventures', '#8b5cf6'),
-  ('Estrategia', 'Strategy', 'strategy', '♟️', 'Planificación y táctica', 'Planning and tactics', '#06b6d4'),
-  ('Aventura', 'Adventure', 'adventure', '🗺️', 'Exploración y narrativa', 'Exploration and narrative', '#10b981'),
-  ('Deportes', 'Sports', 'sports', '⚽', 'Simuladores deportivos', 'Sports simulators', '#f97316');
+  ('Sandbox', 'Sandbox', 'sandbox', 'Hammer', 'Mundos abiertos para construir y explorar', 'Open worlds to build and explore', '#f59e0b'),
+  ('FPS', 'FPS', 'fps', 'Target', 'Disparos en primera persona', 'First-person shooters', '#ef4444'),
+  ('RPG', 'RPG', 'rpg', 'Swords', 'Juegos de rol y aventura', 'Role-playing games and adventures', '#8b5cf6'),
+  ('Estrategia', 'Strategy', 'strategy', 'Trophy', 'Planificación y táctica', 'Planning and tactics', '#06b6d4'),
+  ('Aventura', 'Adventure', 'adventure', 'Map', 'Exploración y narrativa', 'Exploration and narrative', '#10b981'),
+  ('Deportes', 'Sports', 'sports', 'Trophy', 'Simuladores deportivos', 'Sports simulators', '#f97316');
 
 -- ─────────────────────────────────────────
 -- SEED DATA — Juegos de ejemplo

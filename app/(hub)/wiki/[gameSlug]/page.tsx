@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
 import Link from 'next/link';
 import { createClient } from '@/lib/supabase/client';
+import DynamicIcon from '@/components/ui/DynamicIcon';
 import { useAppStore } from '@/store/useAppStore';
 import type { WikiSection, LayersMetadata, TipsMetadata, TableMetadata } from '@/types';
 
@@ -152,7 +153,7 @@ function TipsRenderer({ metadata, language }: { metadata: TipsMetadata; language
           key={i}
           className="flex items-start gap-3 p-3 rounded-xl bg-tertiary hover:bg-secondary transition-colors"
         >
-          <span className="text-lg flex-shrink-0">{tip.icon}</span>
+          <DynamicIcon name={tip.icon || ''} className="w-5 h-5 flex-shrink-0 text-blue-400" />
           <p className="text-sm">{language === 'en' ? tip.tip_en : tip.tip}</p>
         </div>
       ))}

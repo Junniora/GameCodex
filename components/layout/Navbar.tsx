@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 import { useAppStore } from '@/store/useAppStore';
 import { useAuth } from '@/lib/hooks/useAuth';
 import LanguageSwitcher from './LanguageSwitcher';
+import { Home, Gamepad2, Star, Settings, Sun, Moon, User } from 'lucide-react';
 
 export default function Navbar() {
   const { t, toggleTheme, theme } = useAppStore();
@@ -12,10 +13,10 @@ export default function Navbar() {
   const pathname = usePathname();
 
   const navLinks = [
-    { href: '/hub', label: t('nav.hub'), icon: '🏠' },
-    { href: '/games', label: t('nav.games'), icon: '🎮' },
-    { href: '/favorites', label: t('nav.favorites'), icon: '⭐' },
-    { href: '/admin', label: t('nav.admin'), icon: '⚙️' },
+    { href: '/hub', label: t('nav.hub'), icon: <Home className="w-5 h-5" /> },
+    { href: '/games', label: t('nav.games'), icon: <Gamepad2 className="w-5 h-5" /> },
+    { href: '/favorites', label: t('nav.favorites'), icon: <Star className="w-5 h-5" /> },
+    { href: '/admin', label: t('nav.admin'), icon: <Settings className="w-5 h-5" /> },
   ];
 
   const isActive = (href: string) => pathname.startsWith(href);
@@ -31,7 +32,7 @@ export default function Navbar() {
           href="/hub"
           className="flex items-center gap-2 font-bold text-lg"
         >
-          <span className="text-2xl">🎮</span>
+          <Gamepad2 className="w-8 h-8 text-blue-500" />
           <span className="text-gradient font-extrabold tracking-tight">
             GameHub
           </span>
@@ -68,14 +69,14 @@ export default function Navbar() {
             className="p-2 rounded-lg hover:bg-tertiary transition-colors"
             title={theme === 'dark' ? t('common.lightMode') : t('common.darkMode')}
           >
-            {theme === 'dark' ? '☀️' : '🌙'}
+            {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
           </button>
 
           {/* User menu */}
           {user && (
             <div className="flex items-center gap-2">
               <div className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-tertiary">
-                <span className="text-sm">👤</span>
+                <User className="w-4 h-4" />
                 <span className="text-sm text-muted truncate max-w-[120px]">
                   {user.email?.split('@')[0]}
                 </span>

@@ -1,6 +1,7 @@
 'use client';
 // components/hub/CategoryFilter.tsx
 import type { Category, Language } from '@/types';
+import DynamicIcon from '@/components/ui/DynamicIcon';
 
 interface Props {
   categories: Category[];
@@ -34,7 +35,7 @@ export default function CategoryFilter({ categories, selected, onSelect, languag
           }`}
           style={selected === cat.slug ? { backgroundColor: cat.color } : {}}
         >
-          {cat.icon} {language === 'en' ? cat.name_en : cat.name}
+          <DynamicIcon name={cat.icon || ''} className="w-3.5 h-3.5" /> {language === 'en' ? cat.name_en : cat.name}
         </button>
       ))}
     </div>

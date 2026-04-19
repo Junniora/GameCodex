@@ -2,10 +2,11 @@
 // components/layout/LanguageSwitcher.tsx
 import { useAppStore } from '@/store/useAppStore';
 import type { Language } from '@/types';
+import { Globe } from 'lucide-react';
 
 const languages = [
-  { code: 'es' as Language, label: 'ES', flag: '🇲🇽' },
-  { code: 'en' as Language, label: 'EN', flag: '🇺🇸' },
+  { code: 'es' as Language, label: 'ES', icon: Globe },
+  { code: 'en' as Language, label: 'EN', icon: Globe },
 ];
 
 export default function LanguageSwitcher() {
@@ -13,7 +14,7 @@ export default function LanguageSwitcher() {
 
   return (
     <div className="flex items-center gap-0.5 p-0.5 rounded-lg bg-tertiary">
-      {languages.map(({ code, label, flag }) => (
+      {languages.map(({ code, label, icon: Icon }) => (
         <button
           key={code}
           onClick={() => setLanguage(code)}
@@ -27,7 +28,7 @@ export default function LanguageSwitcher() {
           `}
           title={`Switch to ${label}`}
         >
-          <span>{flag}</span>
+          <Icon className="w-3 h-3" />
           <span>{label}</span>
         </button>
       ))}

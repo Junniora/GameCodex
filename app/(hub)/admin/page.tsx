@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { createClient } from '@/lib/supabase/client';
 import { useAppStore } from '@/store/useAppStore';
 import { useCategories } from '@/lib/hooks/useGames';
+import { Settings, Folder, Gamepad2, BookOpen, CheckCircle, XCircle } from 'lucide-react';
 
 type Tab = 'category' | 'game' | 'wiki';
 
@@ -15,7 +16,7 @@ export default function AdminPage() {
 
   /* ── Category form state ── */
   const [catForm, setCatForm] = useState({
-    name: '', name_en: '', slug: '', icon: '🎮', color: '#6366f1',
+    name: '', name_en: '', slug: '', icon: 'Gamepad2', color: '#6366f1',
     description: '', description_en: '',
   });
 
@@ -46,7 +47,7 @@ export default function AdminPage() {
       ...catForm,
       slug: catForm.slug || catForm.name.toLowerCase().replace(/\s+/g, '-'),
     });
-    setCatForm({ name: '', name_en: '', slug: '', icon: '🎮', color: '#6366f1', description: '', description_en: '' });
+    setCatForm({ name: '', name_en: '', slug: '', icon: 'Gamepad2', color: '#6366f1', description: '', description_en: '' });
   };
 
   const handleGameSave = () => {
@@ -74,16 +75,16 @@ export default function AdminPage() {
     });
   };
 
-  const tabs: { id: Tab; label: string; icon: string }[] = [
-    { id: 'category', label: t('admin.addCategory'), icon: '🗂️' },
-    { id: 'game', label: t('admin.addGame'), icon: '🎮' },
-    { id: 'wiki', label: t('admin.addWiki'), icon: '📚' },
+  const tabs: { id: Tab; label: string; icon: React.ReactNode }[] = [
+    { id: 'category', label: t('admin.addCategory'), icon: <Folder className="w-4 h-4" /> },
+    { id: 'game', label: t('admin.addGame'), icon: <Gamepad2 className="w-4 h-4" /> },
+    { id: 'wiki', label: t('admin.addWiki'), icon: <BookOpen className="w-4 h-4" /> },
   ];
 
   return (
     <div className="max-w-3xl mx-auto px-4 animate-fadeIn">
       <h1 className="text-3xl font-extrabold mb-6 flex items-center gap-2">
-        ⚙️ {t('admin.title')}
+        <Settings className="w-8 h-8 text-muted" /> {t('admin.title')}
       </h1>
 
       {/* Tabs */}
@@ -103,13 +104,13 @@ export default function AdminPage() {
 
       {/* Status */}
       {status === 'saved' && (
-        <div className="mb-4 p-3 rounded-xl bg-green-500/15 border border-green-500/20 text-green-400 text-sm animate-fadeIn">
-          ✅ {t('admin.saved')}
+        <div className="mb-4 p-3 rounded-xl bg-green-500/15 border border-green-500/20 text-green-400 text-sm animate-fadeIn flex items-center gap-2">
+          <CheckCircle className="w-4 h-4" /> {t('admin.saved')}
         </div>
       )}
       {status === 'error' && (
-        <div className="mb-4 p-3 rounded-xl bg-red-500/15 border border-red-500/20 text-red-400 text-sm animate-fadeIn">
-          ❌ {t('admin.error')}
+        <div className="mb-4 p-3 rounded-xl bg-red-500/15 border border-red-500/20 text-red-400 text-sm animate-fadeIn flex items-center gap-2">
+          <XCircle className="w-4 h-4" /> {t('admin.error')}
         </div>
       )}
 
@@ -147,7 +148,7 @@ export default function AdminPage() {
             <select className="input-apple" value={gameForm.category_id} onChange={(e) => setGameForm({ ...gameForm, category_id: e.target.value })}>
               <option value="">— Seleccionar —</option>
               {categories.map((c) => (
-                <option key={c.id} value={c.id}>{c.icon} {language === 'en' ? c.name_en : c.name}</option>
+                <option key={c.id} value={c.id}>{language === 'en' ? c.name_en : c.name}</option>
               ))}
             </select>
           </Row>

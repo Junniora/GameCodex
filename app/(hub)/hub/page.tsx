@@ -9,6 +9,8 @@ import { useFavorites } from '@/lib/hooks/useFavorites';
 import GameCard from '@/components/hub/GameCard';
 import CategoryFilter from '@/components/hub/CategoryFilter';
 import SearchBar from '@/components/hub/SearchBar';
+import DynamicIcon from '@/components/ui/DynamicIcon';
+import { Sparkles, Folder, Gamepad2, Search } from 'lucide-react';
 
 export default function HubPage() {
   const { t, language } = useAppStore();
@@ -40,7 +42,7 @@ export default function HubPage() {
       {!search && selectedCategory === 'all' && (
         <section className="animate-fadeIn delay-100" style={{ animationFillMode: 'both' }}>
           <h2 className="text-xl font-bold mb-4 flex items-center gap-2">
-            <span>✨</span> {t('hub.featured')}
+            <Sparkles className="w-5 h-5 text-yellow-400" /> {t('hub.featured')}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {featuredLoading
@@ -67,7 +69,7 @@ export default function HubPage() {
       {!search && (
         <section className="animate-fadeIn delay-200" style={{ animationFillMode: 'both' }}>
           <h2 className="text-xl font-bold mb-4 flex items-center gap-2">
-            <span>🗂️</span> {t('hub.categories')}
+            <Folder className="w-5 h-5 text-blue-400" /> {t('hub.categories')}
           </h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
             {categories.map((cat) => (
@@ -81,7 +83,9 @@ export default function HubPage() {
                   ${selectedCategory === cat.slug ? 'ring-2 ring-blue-400' : ''}
                 `}
               >
-                <div className="text-3xl mb-1">{cat.icon}</div>
+                <div className="flex justify-center mb-1">
+                  <DynamicIcon name={cat.icon || ''} className="w-8 h-8" />
+                </div>
                 <div className="text-xs font-semibold">
                   {language === 'en' ? cat.name_en : cat.name}
                 </div>
@@ -95,7 +99,7 @@ export default function HubPage() {
       <section className="animate-fadeIn delay-300" style={{ animationFillMode: 'both' }}>
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-5">
           <h2 className="text-xl font-bold flex items-center gap-2">
-            <span>🎮</span> {t('hub.allGames')}
+            <Gamepad2 className="w-5 h-5 text-green-400" /> {t('hub.allGames')}
           </h2>
           <SearchBar
             value={search}
@@ -121,7 +125,9 @@ export default function HubPage() {
             : games.length === 0
             ? (
                 <div className="col-span-full text-center py-16">
-                  <div className="text-4xl mb-3">🔍</div>
+                  <div className="flex justify-center mb-3 text-muted">
+                    <Search className="w-10 h-10" />
+                  </div>
                   <p className="font-semibold">{t('hub.noResults')}</p>
                   <p className="text-sm text-muted mt-1">{t('hub.noResultsDesc')}</p>
                 </div>
