@@ -1,0 +1,102 @@
+{
+  "nav": {
+    "hub": "Hub",
+    "games": "Juegos",
+    "wiki": "Wiki",
+    "favorites": "Favoritos",
+    "admin": "Administrar",
+    "logout": "Cerrar sesión"
+  },
+  "auth": {
+    "login": "Iniciar sesión",
+    "register": "Registrarse",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "loginTitle": "Bienvenido de vuelta",
+    "loginSubtitle": "Inicia sesión para continuar tu aventura",
+    "registerTitle": "Únete a GameHub",
+    "registerSubtitle": "Crea tu cuenta y descubre juegos increíbles",
+    "noAccount": "¿No tienes cuenta?",
+    "hasAccount": "¿Ya tienes cuenta?",
+    "forgotPassword": "¿Olvidaste tu contraseña?",
+    "emailPlaceholder": "tu@email.com",
+    "passwordPlaceholder": "Mínimo 6 caracteres",
+    "loggingIn": "Iniciando sesión...",
+    "registering": "Creando cuenta...",
+    "errors": {
+      "invalidCredentials": "Credenciales incorrectas. Intenta de nuevo.",
+      "emailInUse": "Este correo ya está registrado.",
+      "weakPassword": "La contraseña debe tener al menos 6 caracteres.",
+      "generic": "Ocurrió un error. Intenta de nuevo."
+    }
+  },
+  "hub": {
+    "title": "Tu Hub de Juegos",
+    "subtitle": "Explora, descubre y organiza tus videojuegos favoritos",
+    "featured": "Destacados",
+    "categories": "Categorías",
+    "allGames": "Todos los juegos",
+    "searchPlaceholder": "Buscar juegos...",
+    "noResults": "No se encontraron juegos",
+    "noResultsDesc": "Intenta con otro término de búsqueda",
+    "filterBy": "Filtrar por",
+    "allCategories": "Todas las categorías"
+  },
+  "games": {
+    "platforms": "Plataformas",
+    "buyOn": "Comprar en",
+    "releaseYear": "Año de lanzamiento",
+    "developer": "Desarrollador",
+    "rating": "Calificación",
+    "viewWiki": "Ver Wiki",
+    "addFavorite": "Agregar a favoritos",
+    "removeFavorite": "Quitar de favoritos",
+    "category": "Categoría",
+    "viewDetails": "Ver detalles"
+  },
+  "wiki": {
+    "title": "Wiki",
+    "resourceLayers": "Capas de recursos",
+    "tips": "Consejos",
+    "backToGame": "Volver al juego"
+  },
+  "favorites": {
+    "title": "Mis Favoritos",
+    "subtitle": "Tu colección personal de juegos",
+    "empty": "No tienes favoritos aún",
+    "emptyDesc": "Explora el hub y agrega juegos a tu lista",
+    "explorGames": "Explorar juegos"
+  },
+  "admin": {
+    "title": "Panel de Administración",
+    "addCategory": "Nueva Categoría",
+    "addGame": "Nuevo Juego",
+    "addWiki": "Agregar Wiki",
+    "categoryName": "Nombre (ES)",
+    "categoryNameEn": "Nombre (EN)",
+    "categorySlug": "Slug",
+    "categoryIcon": "Icono (emoji)",
+    "categoryColor": "Color",
+    "gameName": "Nombre del juego",
+    "gameDescription": "Descripción (ES)",
+    "gameDescriptionEn": "Descripción (EN)",
+    "gameCategory": "Categoría",
+    "gamePlatforms": "Plataformas",
+    "gameRating": "Calificación",
+    "gameDeveloper": "Desarrollador",
+    "gameImageUrl": "URL de imagen",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "saved": "¡Guardado correctamente!",
+    "error": "Error al guardar"
+  },
+  "common": {
+    "loading": "Cargando...",
+    "error": "Error",
+    "retry": "Reintentar",
+    "close": "Cerrar",
+    "back": "Atrás",
+    "darkMode": "Modo oscuro",
+    "lightMode": "Modo claro"
+  }
+}

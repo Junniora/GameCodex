@@ -1,0 +1,102 @@
+{
+  "nav": {
+    "hub": "Hub",
+    "games": "Games",
+    "wiki": "Wiki",
+    "favorites": "Favorites",
+    "admin": "Manage",
+    "logout": "Sign out"
+  },
+  "auth": {
+    "login": "Sign in",
+    "register": "Sign up",
+    "email": "Email address",
+    "password": "Password",
+    "loginTitle": "Welcome back",
+    "loginSubtitle": "Sign in to continue your adventure",
+    "registerTitle": "Join GameHub",
+    "registerSubtitle": "Create your account and discover amazing games",
+    "noAccount": "Don't have an account?",
+    "hasAccount": "Already have an account?",
+    "forgotPassword": "Forgot your password?",
+    "emailPlaceholder": "you@email.com",
+    "passwordPlaceholder": "At least 6 characters",
+    "loggingIn": "Signing in...",
+    "registering": "Creating account...",
+    "errors": {
+      "invalidCredentials": "Invalid credentials. Please try again.",
+      "emailInUse": "This email is already registered.",
+      "weakPassword": "Password must be at least 6 characters.",
+      "generic": "An error occurred. Please try again."
+    }
+  },
+  "hub": {
+    "title": "Your Games Hub",
+    "subtitle": "Explore, discover and organize your favorite video games",
+    "featured": "Featured",
+    "categories": "Categories",
+    "allGames": "All games",
+    "searchPlaceholder": "Search games...",
+    "noResults": "No games found",
+    "noResultsDesc": "Try a different search term",
+    "filterBy": "Filter by",
+    "allCategories": "All categories"
+  },
+  "games": {
+    "platforms": "Platforms",
+    "buyOn": "Buy on",
+    "releaseYear": "Release year",
+    "developer": "Developer",
+    "rating": "Rating",
+    "viewWiki": "View Wiki",
+    "addFavorite": "Add to favorites",
+    "removeFavorite": "Remove from favorites",
+    "category": "Category",
+    "viewDetails": "View details"
+  },
+  "wiki": {
+    "title": "Wiki",
+    "resourceLayers": "Resource layers",
+    "tips": "Tips",
+    "backToGame": "Back to game"
+  },
+  "favorites": {
+    "title": "My Favorites",
+    "subtitle": "Your personal game collection",
+    "empty": "No favorites yet",
+    "emptyDesc": "Explore the hub and add games to your list",
+    "explorGames": "Explore games"
+  },
+  "admin": {
+    "title": "Admin Panel",
+    "addCategory": "New Category",
+    "addGame": "New Game",
+    "addWiki": "Add Wiki",
+    "categoryName": "Name (ES)",
+    "categoryNameEn": "Name (EN)",
+    "categorySlug": "Slug",
+    "categoryIcon": "Icon (emoji)",
+    "categoryColor": "Color",
+    "gameName": "Game name",
+    "gameDescription": "Description (ES)",
+    "gameDescriptionEn": "Description (EN)",
+    "gameCategory": "Category",
+    "gamePlatforms": "Platforms",
+    "gameRating": "Rating",
+    "gameDeveloper": "Developer",
+    "gameImageUrl": "Image URL",
+    "save": "Save",
+    "cancel": "Cancel",
+    "saved": "Saved successfully!",
+    "error": "Error saving"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "retry": "Retry",
+    "close": "Close",
+    "back": "Back",
+    "darkMode": "Dark mode",
+    "lightMode": "Light mode"
+  }
+}
