@@ -245,18 +245,3 @@ npm run lint     # Linting
 | `zustand` | 5.x | Estado global + persistencia |
 | `tailwindcss` | 4.x | Estilos utility-first |
 
----
-
-## 🔄 Próximos pasos recomendados
-
-- [ ] Agregar Framer Motion para animaciones más elaboradas
-- [ ] Sistema de reviews/puntuaciones por usuario
-- [ ] Subida de imágenes con Supabase Storage
-- [ ] Roles de admin (tabla `user_roles`)
-- [ ] Paginación en la lista de juegos
-- [ ] PWA con `next-pwa`
-- [ ] Modo offline con Service Worker
-
----
-
-Hecho con ❤️ usando Next.js 15 + Supabase + Tailwind CSS
